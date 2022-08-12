@@ -6,7 +6,7 @@ import History from "../components/History";
 import ShortlForm from "../components/ShortlForm";
 import { HistoryProvider } from "../context/HistoryContext";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <>
       <Script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}`} />
@@ -39,4 +39,6 @@ export default function HomePage() {
       </HistoryProvider>
     </>
   );
-}
+};
+
+export default HomePage;

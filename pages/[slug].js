@@ -1,4 +1,4 @@
-import { Container, Box } from "@mantine/core";
+import { Box, Container } from "@mantine/core";
 import Script from "next/script";
 import Ads from "../components/Ads";
 import PasswordForm from "../components/PasswordForm";
