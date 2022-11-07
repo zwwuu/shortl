@@ -1,6 +1,5 @@
 import { Box, Container } from "@mantine/core";
 import Script from "next/script";
-import Ads from "../components/Ads";
 import PasswordForm from "../components/PasswordForm";
 import prisma from "../lib/prisma";
 import { NextSeo } from "next-seo";
@@ -14,7 +13,6 @@ const RedirectPage = ({ slug }) => {
         <Box mb={"md"}>
           <PasswordForm slug={slug} />
         </Box>
-        <Ads />
       </Container>
     </>
   );

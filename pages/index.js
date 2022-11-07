@@ -1,6 +1,5 @@
 import { Box, Container, Grid } from "@mantine/core";
 import Script from "next/script";
-import Ads from "../components/Ads";
 import Hero from "../components/Hero";
 import History from "../components/History";
 import ShortlForm from "../components/ShortlForm";
@@ -29,7 +28,6 @@ const HomePage = () => {
               <Box mb={"md"}>
                 <ShortlForm />
               </Box>
-              <Ads />
             </Grid.Col>
             <Grid.Col md={7} xs={12}>
               <History />
