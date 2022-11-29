@@ -1,15 +1,15 @@
 {
   "name": "shortl",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "scripts": {
     "build": "prisma generate && next build",
     "dev": "prisma generate && next dev",
-    "lint": "next lint",
     "fix": "next lint --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "lint": "next lint",
     "start": "next start",
-    "test": "jest",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js,jsx}": "prettier . -w"
