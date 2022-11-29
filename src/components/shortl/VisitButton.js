@@ -1,11 +1,12 @@
 import { Button } from "@mantine/core";
 import { IconArrowForward } from "@tabler/icons";
+import Link from "next/link";
 
 const VisitButton = ({ link }) => {
   return (
     <Button
       color="teal"
-      component={"a"}
+      component={Link}
       href={link}
       leftIcon={<IconArrowForward />}
       rel="noopener noreferrer"

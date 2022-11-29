@@ -1,7 +1,6 @@
-import { Box, Button } from "@mantine/core";
+import { Box, Button, Group } from "@mantine/core";
 import ShareButton from "./ShareButton";
 import ShortlInfo from "./ShortlInfo";
-import ShortlActions from "./StortlActions";
 import VisitButton from "./VisitButton";
 
 const ShortlItem = ({ shortl, onReset }) => {
@@ -13,10 +12,10 @@ const ShortlItem = ({ shortl, onReset }) => {
         <ShortlInfo link={link} url={shortl.url} />
       </Box>
       <Box mb={"md"}>
-        <ShortlActions>
+        <Group position={"right"}>
           <VisitButton link={link} />
           <ShareButton link={link} name={shortl.slug} />
-        </ShortlActions>
+        </Group>
       </Box>
       <Button size="lg" variant="outline" fullWidth onClick={onReset}>
         Shorten another

@@ -31,7 +31,7 @@ const History = () => {
           </Box>
         ) : (
           <Text color="dimmed" sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Box mr={"xs"}> It is empty here</Box>
+            <Box mr={"xs"}>It is empty here</Box>
             <IconMoodSad />
           </Text>
         )}

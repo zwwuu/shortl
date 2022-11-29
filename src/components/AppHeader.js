@@ -1,6 +1,8 @@
 import { ActionIcon, Anchor, Box, Container, Header, useMantineColorScheme } from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/images/brand.svg";
 
 const AppHeader = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -11,16 +13,14 @@ const AppHeader = () => {
       <Header height={64}>
         <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", height: "100%" }}>
           <Box />
-          <Link href={"/"} passHref>
-            <Anchor>
-              <img
-                alt={`${process.env.NEXT_PUBLIC_APP_TITLE} brand logo`}
-                height={20}
-                src={"/images/brand.svg"}
-                width={90}
-              />
-            </Anchor>
-          </Link>
+          <Anchor component={Link} href={"/"}>
+            <Image
+              alt={`${process.env.NEXT_PUBLIC_APP_TITLE} logo`}
+              height={logo.height}
+              src={logo}
+              width={logo.width}
+            />
+          </Anchor>
           <ActionIcon variant="outline" onClick={toggleColorScheme}>
             {dark ? <IconSun /> : <IconMoon />}
           </ActionIcon>

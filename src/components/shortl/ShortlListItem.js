@@ -1,8 +1,7 @@
-import { Box } from "@mantine/core";
+import { Box, Group } from "@mantine/core";
 import ShareButton from "./ShareButton";
 import ShortlInfo from "./ShortlInfo";
 import ShortlMeta from "./ShortlMeta";
-import ShortlActions from "./StortlActions";
 import VisitButton from "./VisitButton";
 import RemoveButton from "./RemoveButton";
 
@@ -26,11 +25,11 @@ const ShortlListItem = ({ shortl }) => {
       <Box mb="xs">
         <ShortlMeta createdAt={shortl.createdAt} />
       </Box>
-      <ShortlActions>
+      <Group position={"right"}>
         <VisitButton link={link} />
         <ShareButton link={link} name={shortl.slug} />
         <RemoveButton id={shortl.id} />
-      </ShortlActions>
+      </Group>
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { ActionIcon, Anchor, Box, Container, Text } from "@mantine/core";
+import { ActionIcon, Anchor, Container, Group, Text } from "@mantine/core";
 import { IconBrandGithub, IconMail } from "@tabler/icons";
 import Link from "next/link";
 
@@ -6,14 +6,12 @@ const Footer = () => {
   return (
     <>
       <Container component={"footer"} mt={"auto"} py={"sm"} sx={{ width: "100%" }}>
-        <Text size={"sm"} sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <Group position={"apart"}>
           <Text>{`© ${new Date().getFullYear()} ${process.env.NEXT_PUBLIC_APP_TITLE}`}</Text>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Link href="/privacy-policy" passHref>
-              <Anchor component="a" mr={"xs"}>
-                Privacy Policy
-              </Anchor>
-            </Link>
+          <Group>
+            <Anchor component={Link} href="/privacy-policy" mr={"xs"}>
+              Privacy Policy
+            </Anchor>
             <ActionIcon
               aria-label="View source code on GitHub"
               component="a"
@@ -31,8 +29,8 @@ const Footer = () => {
             >
               <IconMail />
             </ActionIcon>
-          </Box>
-        </Text>
+          </Group>
+        </Group>
       </Container>
     </>
   );
