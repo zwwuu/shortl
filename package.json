@@ -6,13 +6,13 @@
     "build": "prisma generate && next build",
     "dev": "prisma generate && next dev",
     "fix": "next lint --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format": "prettier --write src/**/*.{css,js,jsx}",
     "lint": "next lint",
     "start": "next start",
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,jsx}": "prettier . -w"
+    "*.{css,js,jsx}": "prettier . -w"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -41,7 +41,6 @@
     "eslint": "^8.28.0",
     "eslint-config-next": "13.0.5",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.31.11",
     "husky": "^8.0.2",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "29.3.1",
