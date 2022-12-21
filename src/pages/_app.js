@@ -1,15 +1,11 @@
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useColorScheme, useLocalStorage } from "@mantine/hooks";
 import { DefaultSeo } from "next-seo";
-import { useRouter } from "next/router";
 import Script from "next/script";
-import { useEffect } from "react";
 import Layout from "../components/Layout";
-import { pageview } from "../lib/gtag";
 import SEO from "../lib/seo";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
   const preferredColorScheme = useColorScheme();
   const [colorScheme, setColorScheme] = useLocalStorage({
     key: "color-scheme",
@@ -34,19 +30,12 @@ export default function App({ Component, pageProps }) {
     '"Segoe UI Emoji"',
   ].join(",");
 
-  useEffect(() => {
-    router.events.on("routeChangeComplete", pageview);
-    return () => {
-      router.events.off("routeChangeComplete", pageview);
-    };
-  }, [router.events]);
-
   return (
     <>
       <DefaultSeo {...SEO} />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-        async
+        strategy="afterInteractive"
       />
       <Script
         dangerouslySetInnerHTML={{
@@ -59,6 +48,7 @@ export default function App({ Component, pageProps }) {
       `,
         }}
         id="google-analytics"
+        strategy="afterInteractive"
       />
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
