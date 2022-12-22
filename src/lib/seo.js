@@ -10,7 +10,7 @@ const seo = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    site_name: process.env.NEXT_PUBLIC_APP_TITLE,
+    siteName: process.env.NEXT_PUBLIC_APP_TITLE,
     url: process.env.NEXT_PUBLIC_APP_URL,
     images: [
       {
