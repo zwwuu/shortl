@@ -1,6 +1,6 @@
 import { ActionIcon, Avatar, Box, Text, Tooltip } from "@mantine/core";
 import { useClipboard } from "@mantine/hooks";
-import { IconCheck, IconCopy } from "@tabler/icons";
+import { IconCheck, IconCopy } from "@tabler/icons-react";
 import { useState } from "react";
 
 const ShortlInfo = ({ link, url }) => {

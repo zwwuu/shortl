@@ -1,5 +1,5 @@
 import { Box, Button, Popover } from "@mantine/core";
-import { IconQrcode } from "@tabler/icons";
+import { IconQrcode } from "@tabler/icons-react";
 import { QRCodeCanvas } from "qrcode.react";
 import { useCallback, useRef, useState } from "react";
 

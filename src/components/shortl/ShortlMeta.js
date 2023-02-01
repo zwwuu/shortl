@@ -1,5 +1,5 @@
 import { Box, Text, Tooltip } from "@mantine/core";
-import { IconCalendar } from "@tabler/icons";
+import { IconCalendar } from "@tabler/icons-react";
 import prettyTime from "../../utils/pretty-time";
 
 const ShortlMeta = ({ createdAt }) => {

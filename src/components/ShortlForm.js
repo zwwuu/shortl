@@ -1,6 +1,6 @@
 import { ActionIcon, Box, Button, Card, Text, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IconEye, IconEyeOff } from "@tabler/icons";
+import { IconEye, IconEyeOff } from "@tabler/icons-react";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "../context/HistoryContext";

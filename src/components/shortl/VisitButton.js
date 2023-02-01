@@ -1,5 +1,5 @@
 import { Button } from "@mantine/core";
-import { IconArrowForward } from "@tabler/icons";
+import { IconArrowForward } from "@tabler/icons-react";
 import Link from "next/link";
 
 const VisitButton = ({ link }) => {

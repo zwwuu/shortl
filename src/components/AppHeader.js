@@ -1,5 +1,5 @@
 import { ActionIcon, Anchor, Box, Container, Header, useMantineColorScheme } from "@mantine/core";
-import { IconMoon, IconSun } from "@tabler/icons";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/images/brand.svg";

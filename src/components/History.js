@@ -1,5 +1,5 @@
 import { ActionIcon, Box, Card, Divider, Text, Title, Tooltip } from "@mantine/core";
-import { IconClearAll, IconMoodSad } from "@tabler/icons";
+import { IconClearAll, IconMoodSad } from "@tabler/icons-react";
 import { useState } from "react";
 import { useHistory } from "../context/HistoryContext";
 import ClearHistoryModal from "./ClearHistoryModal";

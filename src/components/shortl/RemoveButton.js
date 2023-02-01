@@ -1,5 +1,5 @@
 import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconX } from "@tabler/icons";
+import { IconX } from "@tabler/icons-react";
 import { useHistory } from "../../context/HistoryContext";
 
 const RemoveButton = ({ id }) => {

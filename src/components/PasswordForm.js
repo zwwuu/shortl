@@ -1,6 +1,6 @@
 import { ActionIcon, Anchor, Box, Button, Card, keyframes, Text, TextInput, Title } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IconEye, IconEyeOff, IconLock, IconRun } from "@tabler/icons";
+import { IconEye, IconEyeOff, IconLock, IconRun } from "@tabler/icons-react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";

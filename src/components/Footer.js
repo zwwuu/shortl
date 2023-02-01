@@ -1,5 +1,5 @@
 import { ActionIcon, Anchor, Container, Group, Text } from "@mantine/core";
-import { IconBrandGithub, IconMail } from "@tabler/icons";
+import { IconBrandGithub, IconMail } from "@tabler/icons-react";
 import Link from "next/link";
 
 const Footer = () => {
