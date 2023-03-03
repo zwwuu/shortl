@@ -4,6 +4,12 @@ import { DefaultSeo } from "next-seo";
 import Script from "next/script";
 import Layout from "../components/Layout";
 import SEO from "../lib/seo";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function App({ Component, pageProps }) {
   const preferredColorScheme = useColorScheme();
@@ -18,7 +24,7 @@ export default function App({ Component, pageProps }) {
   };
 
   const fontFamily = [
-    "Poppins",
+    poppins.style.fontFamily,
     "-apple-system",
     "BlinkMacSystemFont",
     '"Segoe UI"',
