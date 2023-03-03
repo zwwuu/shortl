@@ -56,7 +56,11 @@ export default function App({ Component, pageProps }) {
         id="google-analytics"
         strategy="afterInteractive"
       />
-
+      <Script
+        crossOrigin="anonymous"
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}`}
+        async
+      ></Script>
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
           theme={{

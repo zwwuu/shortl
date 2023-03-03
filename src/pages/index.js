@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import History from "../components/History";
 import ShortlForm from "../components/ShortlForm";
 import { HistoryProvider } from "../context/HistoryContext";
+import Ad from "../components/Ad";
 
 const HomePage = () => {
   return (
@@ -28,6 +29,7 @@ const HomePage = () => {
               <Box mb={"md"}>
                 <ShortlForm />
               </Box>
+              <Ad />
             </Grid.Col>
             <Grid.Col md={7} xs={12}>
               <History />

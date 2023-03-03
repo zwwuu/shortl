@@ -3,6 +3,7 @@ import Script from "next/script";
 import PasswordForm from "../components/PasswordForm";
 import prisma from "../lib/prisma";
 import { NextSeo } from "next-seo";
+import Ad from "../components/Ad";
 
 const RedirectPage = ({ slug }) => {
   return (
@@ -13,6 +14,7 @@ const RedirectPage = ({ slug }) => {
         <Box mb={"md"}>
           <PasswordForm slug={slug} />
         </Box>
+        <Ad />
       </Container>
     </>
   );
@@ -20,7 +22,7 @@ const RedirectPage = ({ slug }) => {
 
 export default RedirectPage;
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const shortl = await prisma.shortl.findUnique({
     where: { slug: slug },
@@ -29,18 +31,5 @@ export async function getStaticProps({ params }) {
     },
   });
 
-  return shortl ? { props: { slug }, revalidate: 60 } : { notFound: true };
-}
-
-export async function getStaticPaths() {
-  const shortls = await prisma.shortl.findMany({
-    select: {
-      slug: true,
-    },
-  });
-
-  return {
-    paths: shortls.map((shortl) => `/${shortl.slug}`) || [],
-    fallback: true,
-  };
+  return shortl ? { props: { slug } } : { notFound: true };
 }
