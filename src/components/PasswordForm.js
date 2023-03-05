@@ -67,19 +67,13 @@ const PasswordForm = ({ slug }) => {
         <Box>
           <Title mb={"md"}>
             <IconRun /> Redirecting to
-            <Text component={"span"} sx={{ animation: `${focusIn} 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both` }}>
+            <Text sx={{ animation: `${focusIn} 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both` }} span>
               .
             </Text>
-            <Text
-              component={"span"}
-              sx={{ animation: `${focusIn} 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both` }}
-            >
+            <Text sx={{ animation: `${focusIn} 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both` }} span>
               .
             </Text>
-            <Text
-              component={"span"}
-              sx={{ animation: `${focusIn} 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both` }}
-            >
+            <Text sx={{ animation: `${focusIn} 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2s both` }} span>
               .
             </Text>
           </Title>

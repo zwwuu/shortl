@@ -21,7 +21,7 @@ const AppHeader = () => {
               width={logo.width}
             />
           </Anchor>
-          <ActionIcon variant="outline" onClick={toggleColorScheme}>
+          <ActionIcon variant="outline" onClick={() => toggleColorScheme()}>
             {dark ? <IconSun /> : <IconMoon />}
           </ActionIcon>
         </Container>

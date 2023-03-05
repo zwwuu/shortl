@@ -5,6 +5,7 @@ import Script from "next/script";
 import Layout from "../components/Layout";
 import SEO from "../lib/seo";
 import { Poppins } from "next/font/google";
+import { RouterTransition } from "../components/RouterTransition";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -73,6 +74,7 @@ export default function App({ Component, pageProps }) {
           withGlobalStyles
           withNormalizeCSS
         >
+          <RouterTransition />
           <Layout>
             <Component {...pageProps} />
           </Layout>

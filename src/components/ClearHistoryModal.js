@@ -5,7 +5,7 @@ const ClearHistoryModal = ({ open, onClose, onClear }) => {
     <Modal opened={open} title="Clear history" zIndex={500} centered onClose={onClose}>
       <Text>
         {"Clearing history is a permanent action cannot be reversed. "}
-        <Text component={"span"} weight="600">
+        <Text weight="600" span>
           Are you sure?
         </Text>
       </Text>
