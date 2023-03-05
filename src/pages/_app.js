@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import SEO from "../lib/seo";
 import { Poppins } from "next/font/google";
 import { RouterTransition } from "../components/RouterTransition";
+import { event, GoogleAnalytics } from "nextjs-google-analytics";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,23 +41,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-    
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
-      `,
-        }}
-        id="google-analytics"
-        strategy="afterInteractive"
-      />
+      <GoogleAnalytics trackPageViews />
       <Script
         crossOrigin="anonymous"
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}`}
@@ -82,4 +67,13 @@ export default function App({ Component, pageProps }) {
       </ColorSchemeProvider>
     </>
   );
+}
+
+export function reportWebVitals(metric) {
+  event(metric.name, {
+    event_category: metric.label === "web-vital" ? "Web Vitals" : "custom metric",
+    value: Math.round(metric.name === "CLS" ? metric.value * 1000 : metric.value), // values must be integers
+    event_label: metric.id, // id unique to current page load
+    non_interaction: true, // avoids affecting bounce rate.
+  });
 }
