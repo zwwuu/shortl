@@ -15,6 +15,11 @@ export default class _Document extends Document {
           <link color="#228be6" href="/safari-pinned-tab.svg" rel="mask-icon" />
           <meta content="#228be6" name="msapplication-TileColor" />
           <meta content="#ffffff" name="theme-color" />
+          <script
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}`}
+            async
+          />
         </Head>
         <body>
           <Main />

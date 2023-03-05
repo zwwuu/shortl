@@ -1,7 +1,6 @@
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useColorScheme, useLocalStorage } from "@mantine/hooks";
 import { DefaultSeo } from "next-seo";
-import Script from "next/script";
 import Layout from "../components/Layout";
 import SEO from "../lib/seo";
 import { Poppins } from "next/font/google";
@@ -42,11 +41,6 @@ export default function App({ Component, pageProps }) {
     <>
       <DefaultSeo {...SEO} />
       <GoogleAnalytics trackPageViews />
-      <Script
-        crossOrigin="anonymous"
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}`}
-        async
-      ></Script>
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
           theme={{
