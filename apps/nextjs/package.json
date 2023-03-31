@@ -1,0 +1,51 @@
+{
+  "name": "shortl-nextjs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "clean": "rimraf .next .turbo node_modules",
+    "dev": "next dev",
+    "lint": "next lint --fix",
+    "lint:fix": "npm run lint --fix",
+    "start": "next start",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^6.0.5",
+    "@mantine/form": "^6.0.5",
+    "@mantine/hooks": "^6.0.5",
+    "@mantine/next": "^6.0.5",
+    "@mantine/nprogress": "^6.0.5",
+    "@tabler/icons-react": "^2.12.0",
+    "@trpc/client": "^10.18.0",
+    "@trpc/next": "^10.18.0",
+    "@trpc/react-query": "^10.18.0",
+    "@trpc/server": "^10.18.0",
+    "next": "^13.2.4",
+    "next-seo": "^5.15.0",
+    "next-sitemap": "^4.0.6",
+    "nextjs-google-analytics": "^2.3.3",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.0",
+    "shortl-api": "*",
+    "shortl-db": "*",
+    "shortl-pretty-time": "*",
+    "shortl-schema": "*",
+    "superjson": "^1.12.2"
+  },
+  "devDependencies": {
+    "@types/grecaptcha": "^3.0.4",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "^8.37.0",
+    "eslint-config-shortl": "*",
+    "typescript": "^5.0.3"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/.env"],
+  "globalEnv": [
+    "NODE_ENV",
+    "APP_MAX_SLUG_LENGTH",
+    "APP_SLUG_LENGTH",
+    "APP_SLUG_MAX_RETRY",
+    "APP_SCRYPT_KEY_LENGTH",
+    "APP_SCRYPT_SALT_LENGTH",
+    "GOOGLE_RECAPTCHA_SECRET_KEY",
+    "DATABASE_URL",
+    "SHADOW_DATABASE_URL",
+    "NEXT_PUBLIC_APP_DESCRIPTION",
+    "NEXT_PUBLIC_APP_EMAIL",
+    "NEXT_PUBLIC_APP_REPO",
+    "NEXT_PUBLIC_APP_TITLE",
+    "NEXT_PUBLIC_APP_URL",
+    "NEXT_PUBLIC_GA_MEASUREMENT_ID",
+    "NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY"
+  ],
+  "pipeline": {
+    "db:generate": {
+      "inputs": ["prisma/schema.prisma"],
+      "cache": false
+    },
+    "db:push": {
+      "inputs": ["prisma/schema.prisma"],
+      "cache": false
+    },
+    "db:deploy": {
+      "inputs": ["prisma/schema.prisma"],
+      "cache": false
+    },
+    "db:format": {
+      "inputs": ["prisma/schema.prisma"],
+      "cache": false
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "build": {
+      "dependsOn": ["^build", "^db:generate"],
+      "outputs": [".next/**"]
+    },
+    "lint": {
+      "cache": false
+    },
+    "lint:fix": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "type-check": {
+      "dependsOn": ["^db:generate"],
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "shortl-schema",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rimraf .turbo node_modules",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-shortl": "*",
+    "typescript": "^5.0.3"
+  }
+}

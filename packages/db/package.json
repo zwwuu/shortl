@@ -1,0 +1,28 @@
+{
+  "name": "shortl-db",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rimraf .turbo node_modules",
+    "db:deploy": "prisma migrate deploy",
+    "db:format": "prisma format",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push --skip-generate",
+    "dev": "prisma studio --port 5556 --browser none",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-shortl": "*",
+    "prisma": "^4.12.0",
+    "typescript": "^5.0.3"
+  }
+}
